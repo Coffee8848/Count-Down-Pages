@@ -1,83 +1,33 @@
 <!DOCTYPE html>
 <html lang="zh">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>新年倒计时</title>
-
+    
     <!-- 引入CSS样式 -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/canvas.css">
 
-    <!-- 引入动画库 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-
-    <!-- 引入 Fireworks.js 库 -->
-    <script src="https://cdn.jsdelivr.net/npm/fireworks-js/dist/index.umd.js"></script>
 </head>
-
 <body>
     <div class="container">
-        <h1>距离2025年还剩:</h1>
-        <div id="countdown"></div>
-        <button id="fireworksButton">我现在就要看烟花</button>
+        <!-- 倒计时面板 -->
+        <div id="countdown-container">
+            <h1>新年倒计时</h1>
+            <div id="countdown"></div> <!-- 倒计时区域 -->
+        </div>
+
+        <!-- 触发烟花的按钮 -->
+        <button id="fireworks-button">我现在就要看烟花</button>
+
+        <!-- 烟花效果的Canvas -->
+        <canvas id="fireworks-canvas"></canvas>
     </div>
 
-    <!-- 烟花容器 -->
-    <div id="fireworksContainer"></div>
-
-    <!-- 引入倒计时脚本 -->
-    <script src="assets/js/countdown.js"></script>
-
-    <!-- 触发烟花的脚本 -->
-    <script>
-        // 获取元素
-        const countdownElement = document.getElementById('countdown');
-        const fireworksButton = document.getElementById('fireworksButton');
-
-        // 设置新年日期
-        const newYear = new Date('2025-01-01T00:00:00').getTime();
-
-        // 更新倒计时函数
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const timeLeft = newYear - now;
-
-            // 计算剩余时间
-            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-            // 显示倒计时
-            countdownElement.innerHTML = `${days} 天 ${hours} 小时 ${minutes} 分钟 ${seconds} 秒`;
-
-            // 如果倒计时结束，显示烟花
-            if (timeLeft <= 0) {
-                clearInterval(interval); // 停止倒计时
-                countdownElement.innerHTML = "新年快乐！";
-                startFireworks(); // 开始烟花
-            }
-        }
-
-        // 每秒更新时间
-        const interval = setInterval(updateCountdown, 1000);
-
-        // 点击按钮立即显示烟花
-        fireworksButton.addEventListener('click', () => {
-            clearInterval(interval); // 停止倒计时
-            countdownElement.innerHTML = "新年快乐！";
-            startFireworks(); // 开始烟花
-        });
-
-        // 开始烟花函数
-        function startFireworks() {
-    const container = document.getElementById('fireworksContainer');
-    // 尝试使用 Fireworks.default
-    const fireworks = new Fireworks.default(container, { /* 配置选项 */ });
-    fireworks.start();
-}
-    </script>
+    <!-- 引入 JavaScript 文件 -->
+    <script src="assets/js/countdown.js"></script> <!-- 引入已有的倒计时脚本 -->
+    <script src="assets/js/fireworks.js"></script> <!-- 新建的烟花脚本 -->
 </body>
-
 </html>
