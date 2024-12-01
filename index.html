@@ -7,6 +7,7 @@
     
     <!-- 引入CSS样式 -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/canvas.css">
     
     <!-- 引入动画库或框架（如果有的话） -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
@@ -20,11 +21,20 @@
         </div>
         
         <!-- 烟花效果的容器 -->
-        <div id="fireworks-container"></div>
+   
+        <div id="gui"></div>		
+        <div id="canvas-container">
+          <div id="mountains2"></div>
+          <div id="mountains1"></div>
+          <div id="skyline"></div>
+        </div>
+        
     </div>
 
     <!-- 引入 JavaScript 文件 -->
     <script src="assets/js/countdown.js"></script>
     <script src="assets/js/fireworks.js"></script>
+    <!-- 引入 Canvas 烟花的 JavaScript 文件 -->
+    <script src="assets/js/canvas-fireworks.js"></script>
 </body>
 </html>
