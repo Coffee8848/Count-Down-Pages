@@ -68,7 +68,7 @@ button {
     padding: 10px 20px;
     font-size: 1.5rem;
     cursor: pointer;
-    background-color: #ff5c5c;
+    background-color: #131313;
     color: white;
     border: none;
     border-radius: 5px;
@@ -77,5 +77,5 @@ button {
 }
 
 button:hover {
-    background-color: #ff2a2a;
+    background-color: #00186d;
 }
