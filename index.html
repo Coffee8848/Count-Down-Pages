@@ -72,10 +72,11 @@
 
         // 开始烟花函数
         function startFireworks() {
-            const container = document.getElementById('fireworksContainer');
-            const fireworks = new Fireworks(container, { /* 配置选项 */ });
-            fireworks.start();
-        }
+    const container = document.getElementById('fireworksContainer');
+    // 尝试使用 Fireworks.default
+    const fireworks = new Fireworks.default(container, { /* 配置选项 */ });
+    fireworks.start();
+}
     </script>
 </body>
 
