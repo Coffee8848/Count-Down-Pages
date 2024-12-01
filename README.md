@@ -1,6 +1,7 @@
 # COUNT-DOWN-PAGES
 
 这是一个简单的新年倒计时页面，倒计时结束时会展示烟花效果。
+引入了fireworks.js
 
 ## 功能
 
