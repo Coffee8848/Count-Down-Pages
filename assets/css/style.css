@@ -20,33 +20,6 @@ body {
     z-index: 1; /* 保证容器内容在烟花之上 */
 }
 
-/* 标题样式 */
-h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    animation: fadeIn 2s ease-in-out;
-}
-
-/* 倒计时样式 */
-#countdown {
-    font-size: 4rem;
-    font-weight: bold;
-    animation: bounce 1s infinite;
-}
-
-/* 倒计时动画效果 */
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-20px);
-    }
-    60% {
-        transform: translateY(-10px);
-    }
-}
-
 /* 欢迎界面容器样式 */
 #countdown-container {
     z-index: 10;  /* 保证倒计时面板在烟花上方 */
@@ -73,9 +46,62 @@ button {
     border: none;
     border-radius: 5px;
     margin-top: 20px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    animation: fadeIn 1s ease-in-out;
+    animation-delay: 4s; /* 延迟4秒开始动画 */
+    opacity: 0;
+    animation-fill-mode: forwards;
 }
 
 button:hover {
     background-color: #00186d;
+    transform: scale(1.2, 1.2); /* 悬浮时变宽变长 */
+}
+
+/* 自定义倒计时动画 */
+@keyframes countdownAnimation {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* 倒计时样式 */
+#countdown {
+    font-size: 4rem;
+    font-weight: bold;
+    animation: countdownAnimation 2s infinite;
+    animation-delay: 2s; /* 延迟2秒开始动画 */
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+/* 标题飘入动画效果 */
+@keyframes slideIn {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* 按钮淡入动画效果 */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }

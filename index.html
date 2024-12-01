@@ -8,6 +8,7 @@
     <!-- 引入CSS样式 -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/canvas.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 </head>
@@ -15,12 +16,12 @@
     <div class="container">
         <!-- 倒计时面板 -->
         <div id="countdown-container">
-            <h1>距离2025年还剩</h1>
-            <div id="countdown"></div> <!-- 倒计时区域 -->
+            <h1 class="animate__animated animate__fadeInDown">距离2025年还剩</h1>
+            <div id="countdown" class="animate__animated animate__fadeIn animate__delay-2s"></div> <!-- 倒计时区域 -->
         </div>
 
         <!-- 触发烟花的按钮 -->
-        <button id="fireworks-button">我是学生 我现在就要看烟花</button>
+        <button id="fireworks-button" class="animate__animated animate__fadeIn animate__delay-4s">我是学生 我现在就要看烟花</button>
 
         <!-- 烟花效果的Canvas -->
         <canvas id="fireworks-canvas"></canvas>
