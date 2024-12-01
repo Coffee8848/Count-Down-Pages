@@ -85,7 +85,7 @@ const fireworks = [];
 
 function createFirework() {
     const x = Math.random() * canvas.width;
-    const y = canvas.height;  // 从底部发射
+    const y = Math.random() * canvas.height;  // 从任意位置发射
     fireworks.push(new Firework(x, y));
 }
 
