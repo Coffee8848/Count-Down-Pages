@@ -3,8 +3,8 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: #2c3e50; /* 深色背景 */
-    color: white;
+    background: #bcbfc2; /* 深色背景 */
+    color: rgb(48, 48, 48);
     display: flex;
     justify-content: center;
     align-items: center;
